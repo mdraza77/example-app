@@ -1,9 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\DemoController;
-use App\Http\Controllers\SingleActionController;
-use Illuminate\Container\Attributes\Singleton;
+// use App\Http\Controllers\DemoController;
+// use App\Http\Controllers\SingleActionController;
+// use Illuminate\Container\Attributes\Singleton;
+// use App\Http\Controllers\PhotoController;
+use App\Http\Controllers\RegistrationController;
 
 // Route::get('/{name?}', function ($name= null) {
 //     $demo = "<h2>Md Raza</h2>";
@@ -22,8 +24,10 @@ use Illuminate\Container\Attributes\Singleton;
 //     return view('courses');
 // });
 
-Route::get('/', [DemoController::class, 'index']);
-Route::get('/about', [DemoController::class, 'about']);
-// Route::get('/courses', [DemoController::class, 'courses']);
-Route::get('/courses', SingleActionController::class);
-
+// Route::get('/', [DemoController::class, 'index']);
+// Route::get('/about', [DemoController::class, 'about']);
+// // Route::get('/courses', [DemoController::class, 'courses']);
+// Route::get('/courses', SingleActionController::class);
+// Route::resource('photo', PhotoController::class);
+Route::get('/register', [RegistrationController::class, 'index']);
+Route::post('/register', [RegistrationController::class, 'register']);
