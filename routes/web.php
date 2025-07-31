@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 // use Illuminate\Container\Attributes\Singleton;
 // use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\RegistrationController;
+use App\Models\Customer;
 
 // Route::get('/{name?}', function ($name= null) {
 //     $demo = "<h2>Md Raza</h2>";
@@ -31,3 +32,9 @@ use App\Http\Controllers\RegistrationController;
 // Route::resource('photo', PhotoController::class);
 Route::get('/register', [RegistrationController::class, 'index']);
 Route::post('/register', [RegistrationController::class, 'register']);
+
+Route::get('/customer', function () {
+    $customers = Customer::all();
+    echo "<pre>";
+    print_r($customers->toArray());
+});
