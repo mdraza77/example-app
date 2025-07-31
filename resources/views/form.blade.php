@@ -19,23 +19,30 @@
                 @php
                     print_r($errors->all());
                 @endphp
-                </pre> --}}
+            </pre> --}}
+                @php
+                    $demo = 1;
+                @endphp
                 <div class="mt-4">
-                    <div class="mt-4">
+                    <x-input type="text" name="name" label="Please Enter Your Name" :demo=$demo />
+                    <x-input type="email" name="email" label="Please Enter Your Email" />
+                    <x-input type="password" name="password" label="Please Enter Your Password" />
+                    <x-input type="password" name="password_confirm" label="Please Re-Enter Your Password" />
+                    {{-- <div class="mt-4">
                         <label class="block" for="phone">Name</label>
-                        <input type="text" placeholder="Name" name ="name" value="{{old('name')}}"
+                        <input type="text" placeholder="Name" name ="name" value="{{ old('name') }}"
                             class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
                         <span class="text-red-500 text-sm">
                             @error('name')
                                 {{ $message }}
                             @enderror
                         </span>
-                    </div>
+                    </div> 
                     <div>
                         <label class="block" for="email">Email</label>
-                        <input type="email" placeholder="Email" name ="email" value="{{old('email')}}"
+                        <input type="email" placeholder="Email" name ="email" value="{{ old('email') }}"
                             class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
-                            <span class="text-red-500 text-sm">
+                        <span class="text-red-500 text-sm">
                             @error('email')
                                 {{ $message }}
                             @enderror
@@ -45,7 +52,7 @@
                         <label class="block">Password</label>
                         <input type="password" placeholder="Password" name ="password"
                             class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
-                            <span class="text-red-500 text-sm">
+                        <span class="text-red-500 text-sm">
                             @error('password')
                                 {{ $message }}
                             @enderror
@@ -55,12 +62,12 @@
                         <label class="block">Confirm Password</label>
                         <input type="password" placeholder="Password" name ="password_confirm"
                             class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
-                            <span class="text-red-500 text-sm">
+                        <span class="text-red-500 text-sm">
                             @error('password_confirm')
                                 {{ $message }}
                             @enderror
                         </span>
-                    </div>
+                    </div> --}}
                     <div class="flex items-baseline justify-between">
                         <button class="px-6 py-2 mt-4 text-white bg-blue-600 rounded-lg hover:bg-blue-900">Sign
                             Up</button>
