@@ -24,9 +24,22 @@ class CustomerController extends Controller
         $customer->dob = $request['dob'];
         $customer->state = $request['state'];
         $customer->status = $request['status'];
+        $customer->country = $request['country'];
+        $customer->points = $request['points'];
+        $customer->gender = $request['gender'];
         $customer->password = md5($request['password']);
         $customer->save();
 
-        return redirect()->back()->with('success', 'Customer registered successfully!');
+        return redirect('/customer/view');
+    }
+
+    public function view() {
+        $customer = Customer::all();
+        // echo "<pre>";
+        // print_r($customer); 
+        // echo "</pre>";
+        // die;
+        $data = compact('customer');
+        return view('customer-view')->with($data);
     }
 }

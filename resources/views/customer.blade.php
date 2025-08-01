@@ -9,52 +9,60 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body>
-    <section class="bg-gray-100 dark:bg-gray-900 min-h-screen flex items-center justify-center">
-        <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md dark:bg-gray-800">
-            <h2 class="text-2xl font-bold text-center text-gray-800 dark:text-white mb-6">Register Customer</h2>
+<body class="bg-gray-100 dark:bg-gray-900">
+    <section class="min-h-screen flex items-center justify-center">
+        <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg w-full max-w-lg">
+            <h2 class="text-3xl font-bold text-center text-gray-800 dark:text-white mb-8">Customer Registration</h2>
 
-            <form action="{{ url('/') }}/customer" method="POST">
+            <form action="{{ url('/') }}/customer" method="POST" class="space-y-5">
                 @csrf
 
-                <div class="mb-4">
-                    <label for="name" class="block mb-1 font-medium">Full Name</label>
-                    <input type="text" name="name" id="name" class="w-full border px-4 py-2 rounded" required>
+                {{-- Name --}}
+                <div>
+                    <label for="name" class="block text-sm font-semibold text-gray-700 dark:text-gray-300">Full Name</label>
+                    <input type="text" name="name" id="name" class="w-full mt-1 px-4 py-2 rounded-md bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
                 </div>
 
-                <div class="mb-4">
-                    <label for="email" class="block mb-1 font-medium">Email</label>
-                    <input type="email" name="email" id="email" class="w-full border px-4 py-2 rounded" required>
+                {{-- Email --}}
+                <div>
+                    <label for="email" class="block text-sm font-semibold text-gray-700 dark:text-gray-300">Email</label>
+                    <input type="email" name="email" id="email" class="w-full mt-1 px-4 py-2 rounded-md bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
                 </div>
 
-                <div class="mb-4">
-                    <label for="phone" class="block mb-1 font-medium">Phone</label>
-                    <input type="text" name="phone" id="phone" class="w-full border px-4 py-2 rounded">
+                {{-- Phone --}}
+                <div>
+                    <label for="phone" class="block text-sm font-semibold text-gray-700 dark:text-gray-300">Phone</label>
+                    <input type="text" name="phone" id="phone" class="w-full mt-1 px-4 py-2 rounded-md bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600">
                 </div>
 
-                <div class="mb-4">
-                    <label for="address" class="block mb-1 font-medium">Address</label>
-                    <textarea name="address" id="address" class="w-full border px-4 py-2 rounded" required></textarea>
+                {{-- Address --}}
+                <div>
+                    <label for="address" class="block text-sm font-semibold text-gray-700 dark:text-gray-300">Address</label>
+                    <textarea name="address" id="address" rows="2" class="w-full mt-1 px-4 py-2 rounded-md bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600 resize-none" required></textarea>
                 </div>
 
-                <div class="mb-4">
-                    <label for="dob" class="block mb-1 font-medium">Date of Birth</label>
-                    <input type="date" name="dob" id="dob" class="w-full border px-4 py-2 rounded">
+                {{-- DOB --}}
+                <div>
+                    <label for="dob" class="block text-sm font-semibold text-gray-700 dark:text-gray-300">Date of Birth</label>
+                    <input type="date" name="dob" id="dob" class="w-full mt-1 px-4 py-2 rounded-md bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600">
                 </div>
 
-                <div class="mb-4">
-                    <label for="state" class="block mb-1 font-medium">State</label>
-                    <input type="text" name="state" id="state" class="w-full border px-4 py-2 rounded">
+                {{-- State --}}
+                <div>
+                    <label for="state" class="block text-sm font-semibold text-gray-700 dark:text-gray-300">State</label>
+                    <input type="text" name="state" id="state" class="w-full mt-1 px-4 py-2 rounded-md bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600">
                 </div>
 
-                <div class="mb-4">
-                    <label for="country" class="block mb-1 font-medium">Country</label>
-                    <input type="text" name="country" id="country" class="w-full border px-4 py-2 rounded">
+                {{-- Country --}}
+                <div>
+                    <label for="country" class="block text-sm font-semibold text-gray-700 dark:text-gray-300">Country</label>
+                    <input type="text" name="country" id="country" class="w-full mt-1 px-4 py-2 rounded-md bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600">
                 </div>
 
-                <div class="mb-4">
-                    <label for="gender" class="block mb-1 font-medium">Gender</label>
-                    <select name="gender" id="gender" class="w-full border px-4 py-2 rounded">
+                {{-- Gender --}}
+                <div>
+                    <label for="gender" class="block text-sm font-semibold text-gray-700 dark:text-gray-300">Gender</label>
+                    <select name="gender" id="gender" class="w-full mt-1 px-4 py-2 rounded-md bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600">
                         <option value="">Select Gender</option>
                         <option value="M">Male</option>
                         <option value="F">Female</option>
@@ -62,28 +70,35 @@
                     </select>
                 </div>
 
-                <div class="mb-4">
-                    <label for="status" class="block mb-1 font-medium">Status</label>
-                    <select name="status" id="status" class="w-full border px-4 py-2 rounded">
-                        <option value="active">Active</option>
-                        <option value="inactive">Inactive</option>
+                {{-- Status --}}
+                <div>
+                    <label for="status" class="block text-sm font-semibold text-gray-700 dark:text-gray-300">Status</label>
+                    <select name="status" id="status" class="w-full mt-1 px-4 py-2 rounded-md bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600">
+                        <option value="1">Active</option>
+                        <option value="0">Inactive</option>
                     </select>
                 </div>
 
-                <div class="mb-4">
-                    <label for="points" class="block mb-1 font-medium">Points</label>
-                    <input type="number" name="points" id="points" class="w-full border px-4 py-2 rounded" required>
+                {{-- Points --}}
+                <div>
+                    <label for="points" class="block text-sm font-semibold text-gray-700 dark:text-gray-300">Points</label>
+                    <input type="number" name="points" id="points" class="w-full mt-1 px-4 py-2 rounded-md bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600" required>
                 </div>
 
-                <div class="mb-4">
-                    <label for="password" class="block mb-1 font-medium">Password</label>
-                    <input type="password" name="password" id="password" class="w-full border px-4 py-2 rounded" required>
+                {{-- Password --}}
+                <div>
+                    <label for="password" class="block text-sm font-semibold text-gray-700 dark:text-gray-300">Password</label>
+                    <input type="password" name="password" id="password" class="w-full mt-1 px-4 py-2 rounded-md bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600" required>
                 </div>
 
-                <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">Register</button>
+                {{-- Submit --}}
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 transition text-white font-semibold py-2 rounded-md mt-4">
+                    Register
+                </button>
             </form>
         </div>
     </section>
 </body>
+
 
 </html>

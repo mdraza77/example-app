@@ -14,9 +14,9 @@ use App\Models\Customer;
 //     $data = compact('name', 'demo');
 //     return view('home')->with($data);
 // });
-// Route::get('/', function () {
-//     return view('home');
-// });
+Route::get('/', function () {
+    return view('home');
+});
 
 // Route::get('/about', function () {
 //     return view('about');
@@ -35,6 +35,7 @@ Route::get('/register', [RegistrationController::class, 'index']);
 Route::post('/register', [RegistrationController::class, 'register']);
 Route::get('/customer', [CustomerController::class, 'index']);
 Route::post('/customer', [CustomerController::class, 'store']);
+Route::get('/customer/view', [CustomerController::class, 'view']);
 
 // Route::get('/customer', function () {
 //     $customers = Customer::all();
