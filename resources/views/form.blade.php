@@ -10,6 +10,17 @@
 </head>
 
 <body>
+        <nav class="bg-blue-600 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-white font-bold text-xl">MyApp</a>
+            <ul class="flex space-x-4">
+                <li><a href="{{url('/')}}" class="text-white hover:text-blue-200">Home</a></li>
+                <li><a href="{{url('/register')}}" class="text-white hover:text-blue-200">About</a></li>
+                <li><a href="{{url('/customer')}}" class="text-white hover:text-blue-200">Customer</a></li>
+                <li><a href="{{url('/customer/view')}}" class="text-white hover:text-blue-200">Customer View</a></li>
+            </ul>
+        </div>
+    </nav>
     <div class="flex items-center justify-center min-h-screen bg-gray-100">
         <div class="px-8 py-6 mt-4 text-left bg-white shadow-lg rounded-lg">
             <h3 class="text-2xl font-bold text-center">Sign Up</h3>

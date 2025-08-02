@@ -10,6 +10,20 @@
 </head>
 
 <body class="bg-gray-100 text-gray-800">
+    <nav class="bg-blue-600 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-white font-bold text-xl">MyApp</a>
+            <ul class="flex space-x-4">
+                <li><a href="{{ url('/') }}" class="text-white hover:text-blue-200">Home</a></li>
+                <li><a href="{{ url('/register') }}" class="text-white hover:text-blue-200">About</a></li>
+                <li><a href="{{ url('/customer') }}" class="text-white hover:text-blue-200">Customer</a></li>
+                <li><a href="{{ url('/customer/view') }}" class="text-white hover:text-blue-200">Customer View</a></li>
+            </ul>
+        </div>
+    </nav>
+    <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow m-2 cursor-pointer">
+        <a href="{{ route('customer.create') }}">Add Customer</a>
+    </button>
     <div class="container mx-auto px-4 py-6">
         <div class="overflow-x-auto rounded-lg shadow-lg bg-white">
             <table class="min-w-full divide-y divide-gray-200 text-sm text-left text-gray-700">
@@ -25,6 +39,7 @@
                         <th class="px-4 py-3">Points</th>
                         <th class="px-4 py-3">Country</th>
                         <th class="px-4 py-3">Gender</th>
+                        <th class="px-4 py-3">Action</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-200 bg-white">
@@ -38,15 +53,19 @@
                             <td class="px-4 py-3">{{ $custo->state }}</td>
                             <td class="px-4 py-3">
                                 @if ($custo->status == '1')
-                                    <span
-                                        class="inline-block px-2 py-1 rounded text-xs font-semibold bg-green-100 text-green-700">
-                                        Active
-                                    </span>
+                                    <button
+                                        class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded shadow cursor-pointer">
+                                        <span>
+                                            Active
+                                        </span>
+                                    </button>
                                 @else
-                                    <span
-                                        class="inline-block px-2 py-1 rounded text-xs font-semibold bg-red-100 text-red-700">
-                                        Inactive
-                                    </span>
+                                    <button
+                                        class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded shadow cursor-pointer">
+                                        <span>
+                                            Inactive
+                                        </span>
+                                    </button>
                                 @endif
                             </td>
                             <td class="px-4 py-3">{{ $custo->points }}</td>
@@ -65,6 +84,12 @@
                                         Other
                                     </span>
                                 @endif
+                            </td>
+                            <td class="px-4 py-3">
+                                <button
+                                    class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded shadow cursor-pointer">
+                                    Delete
+                                </button>
                             </td>
                         </tr>
                     @endforeach

@@ -14,17 +14,17 @@ use App\Models\Customer;
 //     $data = compact('name', 'demo');
 //     return view('home')->with($data);
 // });
-Route::get('/', function () {
-    return view('home');
+// Route::get('/', function () {
+//     return view('home');
+// });
+
+Route::get('/about', function () {
+    return view('about');
 });
 
-// Route::get('/about', function () {
-//     return view('about');
-// });
-
-// Route::get('/courses', function () {
-//     return view('courses');
-// });
+Route::get('/courses', function () {
+    return view('courses');
+});
 
 // Route::get('/', [DemoController::class, 'index']);
 // Route::get('/about', [DemoController::class, 'about']);
@@ -34,7 +34,7 @@ Route::get('/', function () {
 Route::get('/register', [RegistrationController::class, 'index']);
 Route::post('/register', [RegistrationController::class, 'register']);
 Route::get('/customer', [CustomerController::class, 'index']);
-Route::post('/customer', [CustomerController::class, 'store']);
+Route::post('/customer', [CustomerController::class, 'store'])->name('customer.create');
 Route::get('/customer/view', [CustomerController::class, 'view']);
 
 // Route::get('/customer', function () {
@@ -42,3 +42,7 @@ Route::get('/customer/view', [CustomerController::class, 'view']);
 //     echo "<pre>";
 //     print_r($customers->toArray());
 // });
+
+Route::get('/', function() {
+    return view('index');
+});
