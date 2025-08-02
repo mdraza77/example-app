@@ -42,4 +42,12 @@ class CustomerController extends Controller
         $data = compact('customer');
         return view('customer-view')->with($data);
     }
+
+    public function delete($id) {
+        $customer = Customer::find($id);
+        if (!is_null($customer)) {
+            $customer->delete();
+        }
+        return redirect('customer/view');
+    }
 }

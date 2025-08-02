@@ -37,6 +37,8 @@ Route::get('/customer', [CustomerController::class, 'index']);
 Route::post('/customer', [CustomerController::class, 'store'])->name('customer.create');
 Route::get('/customer/view', [CustomerController::class, 'view']);
 
+Route::get('/customer/delete/{id}', [CustomerController::class, 'delete'])->name('customer.delete');
+
 // Route::get('/customer', function () {
 //     $customers = Customer::all();
 //     echo "<pre>";

@@ -54,17 +54,21 @@
                             <td class="px-4 py-3">
                                 @if ($custo->status == '1')
                                     <button
-                                        class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded shadow cursor-pointer">
-                                        <span>
-                                            Active
-                                        </span>
+                                        class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-2 rounded shadow cursor-pointer">
+                                        <a href="">
+                                            <span>
+                                                Active
+                                            </span>
+                                        </a>
                                     </button>
                                 @else
                                     <button
-                                        class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded shadow cursor-pointer">
-                                        <span>
-                                            Inactive
-                                        </span>
+                                        class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-2 rounded shadow cursor-pointer">
+                                        <a href="">
+                                            <span>
+                                                Inactive
+                                            </span>
+                                        </a>
                                     </button>
                                 @endif
                             </td>
@@ -86,10 +90,18 @@
                                 @endif
                             </td>
                             <td class="px-4 py-3">
-                                <button
-                                    class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded shadow cursor-pointer">
-                                    Delete
-                                </button>
+                                <a href="{{route('customer.delete', ['id' => $custo->customer_id])}}">
+                                    <button
+                                        class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-2 rounded shadow cursor-pointer">
+                                        Delete
+                                    </button>
+                                </a>
+                                <a href="{{url('')}}/{{$custo->customer_id}}">
+                                    <button
+                                        class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow cursor-pointer">
+                                        Edit
+                                    </button>
+                                </a>
                             </td>
                         </tr>
                     @endforeach
