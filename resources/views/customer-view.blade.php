@@ -46,7 +46,7 @@
                         </div>
                         <div>
                             <span class="font-semibold text-gray-700">DOB:</span>
-                            <p class="text-gray-600">{{ get_formatted_date($custo->dob, 'd-m-Y') ?: 'N/A' }}</p>
+                            <p class="text-gray-600">{{ $custo->dob ?: 'N/A' }}</p>
                         </div>
                         <div>
                             <span class="font-semibold text-gray-700">State:</span>
@@ -121,7 +121,7 @@
                                 <td class="px-4 py-3">{{ $custo->email }}</td>
                                 <td class="px-4 py-3">{{ $custo->phone ?: 'N/A' }}</td>
                                 <td class="px-4 py-3 max-w-xs truncate" title="{{ $custo->address }}">{{ $custo->address ?: 'N/A' }}</td>
-                                <td class="px-4 py-3">{{ get_formatted_date($custo->dob, 'd-m-Y') ?: 'N/A' }}</td>
+                                <td class="px-4 py-3">{{ $custo->dob ?: 'N/A' }}</td>
                                 <td class="px-4 py-3">{{ $custo->state ?: 'N/A' }}</td>
                                 <td class="px-4 py-3">
                                     @if ($custo->status == '1')
