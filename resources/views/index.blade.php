@@ -10,17 +10,25 @@
 </head>
 
 <body>
-    <nav class="bg-blue-600 p-4">
-        <div class="container mx-auto flex justify-between items-center">
-            <a href="#" class="text-white font-bold text-xl">MyApp</a>
-            <ul class="flex space-x-4">
-                <li><a href="{{url('/')}}" class="text-white hover:text-blue-200">Home</a></li>
-                <li><a href="{{url('/register')}}" class="text-white hover:text-blue-200">About</a></li>
-                <li><a href="{{url('/customer')}}" class="text-white hover:text-blue-200">Customer</a></li>
-                <li><a href="{{url('/customer/view')}}" class="text-white hover:text-blue-200">Customer View</a></li>
-            </ul>
+    @include('layouts.header')
+    <div class="container mx-auto px-4 py-6">
+        <h1 class="text-3xl font-bold text-gray-800 mb-4">Welcome to MyApp</h1>
+        <p class="text-lg text-gray-700">Explore our features and services.</p>
+        <div class="flex flex-wrap justify-center gap-4 mt-8">
+            <a href="{{url('/register')}}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow">
+                Register
+            </a>
+            <a href="{{url('/customer')}}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow">
+                View Customers
+            </a>
+            <a href="{{url('/courses')}}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow">
+                Explore Courses
+            </a>
+            <a href="{{url('/about')}}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow">
+                About Us
+            </a>
         </div>
-    </nav>
+    </div>
 </body>
 
 </html>

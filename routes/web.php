@@ -33,11 +33,15 @@ Route::get('/courses', function () {
 // Route::resource('photo', PhotoController::class);
 Route::get('/register', [RegistrationController::class, 'index']);
 Route::post('/register', [RegistrationController::class, 'register']);
-Route::get('/customer', [CustomerController::class, 'index']);
-Route::post('/customer', [CustomerController::class, 'store'])->name('customer.create');
-Route::get('/customer/view', [CustomerController::class, 'view']);
 
+Route::get('/customer/create', [CustomerController::class, 'create'])->name('customer.create');
 Route::get('/customer/delete/{id}', [CustomerController::class, 'delete'])->name('customer.delete');
+Route::get('/customer/edit/{id}', [CustomerController::class, 'edit'])->name('customer.edit');
+Route::post('/customer/update/{id}', [CustomerController::class, 'update'])->name('customer.update');
+
+Route::get('/customer', [CustomerController::class, 'view'])->name('customer.view');
+Route::post('/customer', [CustomerController::class, 'store'])->name('customer.store'); // ✅ Add this
+
 
 // Route::get('/customer', function () {
 //     $customers = Customer::all();
@@ -45,6 +49,6 @@ Route::get('/customer/delete/{id}', [CustomerController::class, 'delete'])->name
 //     print_r($customers->toArray());
 // });
 
-Route::get('/', function() {
+Route::get('/', function () {
     return view('index');
 });
