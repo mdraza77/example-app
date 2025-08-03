@@ -10,7 +10,7 @@ class CustomerController extends Controller
     public function create()
     {
         $url = url('/customer');
-        $title = 'Register Customer';
+        $title = 'Add Customer';
         $customer = new Customer;
         $data = compact('url', 'title', 'customer');
         return view('customer')->with($data);

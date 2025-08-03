@@ -13,7 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
     <nav class="bg-blue-600 p-4">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="#" class="text-white font-bold text-xl">MyApp</a>
+            <a href="{{url('/')}}" class="text-white font-bold text-xl">MyApp</a>
             <ul class="flex space-x-4">
                 <li><a href="{{url('/')}}" class="text-white hover:text-blue-200">Home</a></li>
                 <li><a href="{{url('/about')}}" class="text-white hover:text-blue-200">About</a></li>
