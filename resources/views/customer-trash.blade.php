@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer View</title>
+    <title>Customer Trash</title>
 </head>
 
 <body>
@@ -24,8 +24,8 @@
                 <a href="{{ route('customer.create') }}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow transition duration-200">
                     Add Customer
                 </a>
-                <a href="{{ route('customer.trash') }}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow transition duration-200">
-                    Go to Trash
+                <a href="{{ route('customer.view') }}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow transition duration-200">
+                    Go to View
                 </a>
             </div>
 
@@ -162,11 +162,11 @@
                                 </td>
                                 <td class="px-4 py-3">
                                     <div class="flex space-x-2">
-                                        <a href="{{ route('customer.delete', ['id' => $custo->customer_id]) }}" class="bg-red-600 hover:bg-red-700 text-white font-bold py-1 px-2 rounded text-xs transition duration-200" onclick="return confirm('Are you sure you want to delete this customer?')">
-                                            Trash
+                                        <a href="{{ route('customer.force-delete', ['id' => $custo->customer_id]) }}" class="bg-red-600 hover:bg-red-700 text-white font-bold py-1 px-2 rounded text-xs transition duration-200" onclick="return confirm('Are you sure you want to delete this customer?')">
+                                            Delete
                                         </a>
-                                        <a href="{{ route('customer.edit', ['id' => $custo->customer_id]) }}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded text-xs transition duration-200">
-                                            Edit
+                                        <a href="{{ route('customer.restore', ['id' => $custo->customer_id]) }}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded text-xs transition duration-200">
+                                            Restore
                                         </a>
                                     </div>
                                 </td>
