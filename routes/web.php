@@ -64,6 +64,7 @@ Route::get('/get-all-session', function () {
 Route::get('set-session', function (Request $request) {
     $request->session()->put('name', "Md Raza");
     $request->session()->put('user_id', "1");
+    $request->session()->flash('status', "success");
     return redirect('get-all-session');
 });
 
