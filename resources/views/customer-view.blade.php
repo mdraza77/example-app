@@ -9,7 +9,13 @@
 
 <body>
     @include('layouts.header')
-
+    <div>
+        @if (session()->has('name'))
+        From Session My Name is {{session()->get('name')}}
+        @else
+        From Session My Name is Guest
+        @endif
+    </div>
     <div class="min-h-screen bg-gray-100 p-4">
         <div class="container mx-auto">
             <!-- Header Section -->

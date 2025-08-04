@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\CustomerController;
 use App\Models\Customer;
+use Illuminate\Http\Request;
+
 
 // Route::get('/{name?}', function ($name= null) {
 //     $demo = "<h2>Md Raza</h2>";
@@ -51,4 +53,22 @@ Route::post('/customer', [CustomerController::class, 'store'])->name('customer.s
 
 Route::get('/', function () {
     return view('index');
+});
+
+Route::get('/get-all-session', function () {
+    $session = session()->all();
+    p($session);
+});
+
+//session part
+Route::get('set-session', function (Request $request) {
+    $request->session()->put('name', "Md Raza");
+    $request->session()->put('user_id', "1");
+    return redirect('get-all-session');
+});
+
+Route::get('destroy-session', function () {
+    session()->forget('name', 'user_id');
+    // session()->forget('user_id');
+    return redirect('get-all-session');
 });

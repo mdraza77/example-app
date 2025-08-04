@@ -6,3 +6,11 @@ if (!function_exists('get_formatted_date')) {
         return $formattedDate;
     }
 }
+
+if (!function_exists('p')) {
+    function p($data)
+    {
+        echo "<pre>";
+        print_r($data);
+    }
+}
