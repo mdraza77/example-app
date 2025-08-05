@@ -48,11 +48,11 @@
                     <input type="search" name="search" id="search"
                         class="w-half p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                         placeholder="Search by name or email" value="{{ $search }}">
-                        <button class="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded cursor-pointer">Search</button>
-                        <a href="{{url('/customer')}}">
-                            <button type="button"
-                                class="bg-red-500 hover:bg-red-400 text-white p-2 rounded ml-2 cursor-pointer">Reset</button>
-                        </a>
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded cursor-pointer">Search</button>
+                    <a href="{{ url('/customer') }}">
+                        <button type="button"
+                            class="bg-red-500 hover:bg-red-400 text-white p-2 rounded ml-2 cursor-pointer">Reset</button>
+                    </a>
                 </div>
             </form>
 
@@ -211,6 +211,9 @@
                             @endforeach
                         </tbody>
                     </table>
+                    <div class="flex justify-center items-center py-6">
+                        {{ $customer->links() }}
+                    </div>
                 </div>
             </div>
 
