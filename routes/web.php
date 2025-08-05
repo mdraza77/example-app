@@ -67,11 +67,11 @@ Route::get('set-session', function (Request $request) {
     $request->session()->put('name', "Md Raza");
     $request->session()->put('user_id', "1");
     $request->session()->flash('status', "success");
-    return redirect('get-all-session');
-});
+    return redirect('/customer');
+})->name('set-session.sessionSet');
 
 Route::get('destroy-session', function () {
     session()->forget('name', 'user_id');
     // session()->forget('user_id');
-    return redirect('get-all-session');
-});
+    return redirect('/customer');
+})->name('destroy-session.sessionDes');
