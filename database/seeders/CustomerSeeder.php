@@ -14,7 +14,7 @@ class CustomerSeeder extends Seeder
      */
     public function run(): void
     {
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 200; $i++) {
             $faker = Faker::create();
             $customer = new Customer;
             $customer->name = $faker->name;

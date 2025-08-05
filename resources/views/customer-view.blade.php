@@ -12,13 +12,13 @@
     <div>
         <a href="{{ route('set-session.sessionSet') }}">
             <button
-                class="m-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors duration-200 shadow">
+                class="m-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors duration-200 shadow cursor-pointer">
                 Set Session
             </button>
         </a>
         <a href="{{ route('destroy-session.sessionDes') }}">
             <button
-                class="m-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors duration-200 shadow">
+                class="m-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors duration-200 shadow cursor-pointer">
                 Destroy Session
             </button>
         </a>
@@ -42,6 +42,19 @@
                     Go to Trash
                 </a>
             </div>
+
+            <form action="" method="GET">
+                <div class="form-group m-2">
+                    <input type="search" name="search" id="search"
+                        class="w-half p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="Search by name or email" value="{{ $search }}">
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded cursor-pointer">Search</button>
+                        <a href="{{url('/customer')}}">
+                            <button type="button"
+                                class="bg-red-500 hover:bg-red-400 text-white p-2 rounded ml-2 cursor-pointer">Reset</button>
+                        </a>
+                </div>
+            </form>
 
             <!-- Mobile Cards View -->
             <div class="block lg:hidden">
