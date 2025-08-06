@@ -7,9 +7,11 @@ use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\IndexController;
 use App\Models\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+// use App\Http\Controllers\IndexController;
 
 
 // Route::get('/{name?}', function ($name= null) {
@@ -98,6 +100,8 @@ Route::get('destroy-session', function () {
     return redirect('/customer');
 })->name('destroy-session.sessionDes');
 
+Route::get('/data', [IndexController::class, 'index']);
+Route::get('/group', [IndexController::class, 'group']);
 Route::get('/{lang}', function ($lang = null) {
     if ($lang == 'es') {
         App::setLocale('es');
