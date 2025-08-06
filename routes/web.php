@@ -101,6 +101,9 @@ Route::get('destroy-session', function () {
 })->name('destroy-session.sessionDes');
 
 Route::get('/data', [IndexController::class, 'index']);
+Route::get('/profile', function () {
+    return "Welcome to your profile";
+});
 Route::get('/group', [IndexController::class, 'group']);
 Route::get('/{lang}', function ($lang = null) {
     if ($lang == 'es') {
