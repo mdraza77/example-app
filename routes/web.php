@@ -9,6 +9,7 @@ use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\CustomerController;
 use App\Models\Customer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 
 // Route::get('/{name?}', function ($name= null) {
@@ -96,3 +97,10 @@ Route::get('destroy-session', function () {
     // session()->forget('user_id');
     return redirect('/customer');
 })->name('destroy-session.sessionDes');
+
+Route::get('/{lang}', function ($lang = null) {
+    if ($lang == 'es') {
+        App::setLocale('es');
+    }
+    return view('welcome');
+});
